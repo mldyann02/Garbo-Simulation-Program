@@ -136,14 +136,14 @@ function App() {
         </div>
       </header>
 
-      <main className="flex-1 p-6 md:p-8">
+      <main className="flex-1" style={{ padding: '2rem 1.5rem', minHeight: 'calc(100vh - 200px)' }}>
         <div className="max-w-7xl mx-auto">
           <div style={{ 
             background: isDarkMode ? 'rgba(14, 165, 233, 0.1)' : 'rgba(2, 132, 199, 0.05)', 
             border: isDarkMode ? '1px solid rgba(14, 165, 233, 0.3)' : '1px solid rgba(2, 132, 199, 0.2)', 
             borderRadius: '12px', 
             padding: '1.5rem', 
-            marginBottom: '2rem' 
+            marginBottom: '2.5rem' 
           }}>
             <h3 style={{ color: isDarkMode ? '#38bdf8' : '#0284c7', marginBottom: '0.5rem' }}>How it works:</h3>
             <p style={{ color: isDarkMode ? '#cbd5e1' : '#1f2937', fontSize: '0.95rem', margin: 0, lineHeight: '1.6' }}>
@@ -151,8 +151,7 @@ function App() {
             </p>
           </div>
 
-          {/* Three-Column Layout */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
             
             {/* User A Environment */}
             <UserPanel 
@@ -188,7 +187,7 @@ function App() {
 
           {/* Footer Info */}
           <div style={{ 
-            marginTop: '3rem', 
+            marginTop: '2rem', 
             paddingTop: '2rem', 
             borderTop: `1px solid ${isDarkMode ? 'rgba(71, 85, 105, 0.3)' : 'rgba(203, 213, 225, 0.5)'}`, 
             textAlign: 'center', 
