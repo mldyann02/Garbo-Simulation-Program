@@ -77,14 +77,14 @@ The resulting Shared Key is represented as ASCII characters and transformed into
 
 The implementation can be verified using the following standardized test case:
 
-| Parameter | Value |
-|-----------|-------|
-| Input Message | "The Mandalorian Must Always Recite, This is The Way!" |
-| User A Private Key | 57 |
-| User B Private Key | 167 |
-| Computed Shared Key | 109 |
-| Transformed AES Key | `109F109F109F109F109F` |
-| Padding Output | Sub-message 4 correctly pads to `"Way!@@@@@@@@@@@@"` |
+| Parameter           | Value                                                  |
+| ------------------- | ------------------------------------------------------ |
+| Input Message       | "The Mandalorian Must Always Recite, This is The Way!" |
+| User A Private Key  | 57                                                     |
+| User B Private Key  | 167                                                    |
+| Computed Shared Key | 109                                                    |
+| Transformed AES Key | `109F109F109F109F109F`                                 |
+| Padding Output      | Sub-message 4 correctly pads to `"Way!@@@@@@@@@@@@"`   |
 
 ---
 
@@ -96,3 +96,7 @@ This README provides:
 2. **Technical Overview** - Framework and library details used in the project
 3. **Cryptographic Deep Dive** - Mathematical concepts and implementation specifics
 4. **Test Cases** - Verification procedures to validate the implementation
+
+## Live Demo
+
+The simulation is actively deployed and can be tested here: https://garbo-simulation-program.vercel.app/
