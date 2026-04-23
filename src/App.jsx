@@ -185,19 +185,22 @@ function App() {
 
           </div>
 
-          {/* Footer Info */}
-          <div style={{ 
-            marginTop: '2rem', 
-            paddingTop: '2rem', 
-            borderTop: `1px solid ${isDarkMode ? 'rgba(71, 85, 105, 0.3)' : 'rgba(203, 213, 225, 0.5)'}`, 
-            textAlign: 'center', 
-            color: isDarkMode ? '#94a3b8' : '#64748b', 
-            fontSize: '0.9rem' 
-          }}>
-            <p style={{ margin: '0.5rem 0' }}>
-              Using Diffie-Hellman (p=199, g=127) with AES-128 encryption • CryptoJS library
-            </p>
-          </div>
+           {/* Footer Info */}
+           <div style={{ 
+             marginTop: '2rem', 
+             paddingTop: '2rem', 
+             borderTop: `1px solid ${isDarkMode ? 'rgba(71, 85, 105, 0.3)' : 'rgba(203, 213, 225, 0.5)'}`, 
+             textAlign: 'center', 
+             color: isDarkMode ? '#94a3b8' : '#64748b', 
+             fontSize: '0.9rem' 
+           }}>
+             <p style={{ margin: '0.5rem 0' }}>
+               Using Diffie-Hellman (p=199, g=127) with AES-128 encryption • CryptoJS library
+             </p>
+             <p style={{ margin: '0.5rem 0' }}>
+               Melody Ann Garbo
+             </p>
+           </div>
         </div>
       </main>
     </div>
