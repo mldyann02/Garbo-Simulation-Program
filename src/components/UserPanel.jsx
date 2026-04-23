@@ -52,6 +52,12 @@ export default function UserPanel({
       return;
     }
 
+    // FIX: ASCII Validation to prevent > 1 byte characters from breaking the 128-bit blocks
+    if (!/^[\x00-\x7F]*$/.test(messageInput)) {
+      alert("Simulation Error: Please use standard 8-bit ASCII characters only.");
+      return;
+    }
+
     setIsSending(true);
     setTimeout(() => {
       const chunks = chunkAndPadMessage(messageInput);

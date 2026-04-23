@@ -7,11 +7,11 @@ import CryptoJS from 'crypto-js';
  */
 export const chunkAndPadMessage = (message) => {
   const chunks = [];
-  // Split into 16-character blocks [cite: 17, 68, 89]
+  // Split into 16-character blocks
   for (let i = 0; i < message.length; i += 16) {
     let chunk = message.slice(i, i + 16);
     
-    // If sub-message is less than 16 chars, pad with '@' [cite: 4, 19, 70, 90, 201]
+    // If sub-message is less than 16 chars, pad with '@'
     if (chunk.length < 16) {
       chunk = chunk.padEnd(16, '@');
     }
@@ -29,12 +29,14 @@ export const chunkAndPadMessage = (message) => {
 export const encryptBlock = (block, transformedKey) => {
   // Convert key and block to UTF-8 for CryptoJS
   const key = CryptoJS.enc.Utf8.parse(transformedKey);
-  const iv = CryptoJS.enc.Utf8.parse(transformedKey); // Simple IV for simulation
+  
+  // FIX: Use a static "Zero IV" (16 bytes of zeros) instead of reusing the key
+  const iv = CryptoJS.enc.Hex.parse('00000000000000000000000000000000'); 
 
   const encrypted = CryptoJS.AES.encrypt(block, key, {
     iv: iv,
     mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.NoPadding // We handle our own '@' padding [cite: 20]
+    padding: CryptoJS.pad.NoPadding // We handle our own '@' padding
   });
 
   return encrypted.toString();
@@ -48,7 +50,9 @@ export const encryptBlock = (block, transformedKey) => {
  */
 export const decryptBlock = (cipherBlock, transformedKey) => {
   const key = CryptoJS.enc.Utf8.parse(transformedKey);
-  const iv = CryptoJS.enc.Utf8.parse(transformedKey);
+  
+  // FIX: Use the same static "Zero IV" for decryption
+  const iv = CryptoJS.enc.Hex.parse('00000000000000000000000000000000');
 
   const decrypted = CryptoJS.AES.decrypt(cipherBlock, key, {
     iv: iv,
